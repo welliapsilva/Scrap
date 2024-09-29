@@ -11,7 +11,7 @@ class QuotesToScrapeSpider(scrapy.Spider):  #colocar o nome da classe e entre pa
         urls = ['https://quotes.toscrape.com/']  #informar os URLs a serem varridos
         # #laço de repetiçã para entar em cada site e retornar os dados conforme é executado retornaldo a os dados cada vez que passar e for encontrando os dados
         for url in urls:
-            yield scrapy.Request(url=url,callback=self.parse)
+            yield scrapy.Request(url=url,callback=self.parse) # o callback indica que toda vez que entrar nesta parte ele vai chamar a função self.parse
     #Response
     def parse(self,response):
         #aqui é  onde voce deve processar o qeu é retornado da response
